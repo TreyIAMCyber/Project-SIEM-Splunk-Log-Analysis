@@ -1,1 +1,1 @@
-# Project-SIEM-Splunk-Log-Analysis
+# SIEM Fundamentals: Security Event Analysis in Splunk 👨🏾‍💻
