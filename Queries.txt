@@ -1,1 +1,43 @@
+🔹 SOC Analyst Queries Using Your Index
+
+1. 
+
+index="splunk_homelab" | spath EventID | search EventID=4625 
+| stats count by user, src_ip 
+| where count > 5 
+| sort -count
+# Detects repeated failed login attempts/Flags potential brute-force attacks
+
+2. 
+
+index="splunk_homelab" | spath EventID | search EventID=4624 
+| stats count by user, src_ip 
+| sort -count
+# Monitors successful logins per user & IP
+
+3. 
+
+index="splunk_homelab" | spath EventID | search EventID=4672 
+| stats count by user 
+| sort -count
+# Identifies accounts gaining special privileges
+
+4. 
+
+index="splunk_homelab" | spath EventID | search EventID=4740 
+| stats count by user 
+| sort -count
+# Tracks accounts locked due to multiple failed login attempts
+
+5. 
+
+index="splunk_homelab" | spath EventID | search EventID=1102
+# Flags when security logs are cleared/threat actor is trying to cover tracks
+
+6. 
+
+index="splunk_homelab" | spath EventID | search EventID=4688 
+| stats count by process_name 
+| sort -count
+# Monitors process executions for suspicious activity
 
