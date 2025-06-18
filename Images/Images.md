@@ -5,7 +5,7 @@
 | where count > 0 
 | sort -count
 (Detects repeated failed login attempts/Flags potential brute-force attacks)
-![Wireshark Filter Example](Screenshot4625.png)
+![Splunk Screenshot](Screenshot4625.png)
 
 2. index="splunk_homelab" | spath EventID | search EventID=4624 
 | stats count by Hostname, IpAddress, SubjectUserName, SubjectLogonId, Message, EventTime, EventType 
